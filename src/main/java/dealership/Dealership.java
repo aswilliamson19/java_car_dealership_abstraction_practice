@@ -62,5 +62,13 @@ public class Dealership {
         this.salesTeam.add(salesperson);
     }
 
-    
+    public void haggle(Salesperson salesperson, Customer customer) {
+        double number = 0;
+        if (salesperson.getStrength() > customer.getStrength()){
+           number = 200 + salesperson.getCommission();
+        } else {
+            number = salesperson.getCommission() - 200;
+        }
+        salesperson.setCommission(number);
+    }
 }

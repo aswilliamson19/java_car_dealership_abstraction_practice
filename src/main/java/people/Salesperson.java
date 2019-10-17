@@ -46,4 +46,8 @@ public class Salesperson extends Person implements ISell {
             this.commission -= 1000;
         }
     }
+
+    public void setCommission(double commission) {
+        this.commission = commission;
+    }
 }

@@ -2,6 +2,7 @@ import Vehicle.Car;
 import dealership.Dealership;
 import org.junit.Before;
 import org.junit.Test;
+import people.Customer;
 import people.Salesperson;
 
 import static org.junit.Assert.assertEquals;
@@ -13,7 +14,9 @@ public class DealershipTest {
     Salesperson salesperson1;
     Salesperson salesperson2;
     Salesperson salesperson3;
-
+    Customer customer1;
+    Customer customer2;
+    Customer customer3;
 
     @Before
     public void before() {
@@ -26,6 +29,9 @@ public class DealershipTest {
         dealership.addStaff(salesperson1);
         dealership.addStaff(salesperson2);
         dealership.addStaff(salesperson3);
+        customer1 = new Customer("Mike", 2000, 3000);
+        customer2 = new Customer("Amanda", 2000, 3000);
+        customer3 = new Customer("Laura", 2000, 3000);
     }
 
     @Test
@@ -46,5 +52,11 @@ public class DealershipTest {
     @Test
     public void hasASalesTeam() {
         assertEquals(3, dealership.countSalesTeam());
+    }
+
+    @Test
+    public void canHaveABiddingWar() {
+        dealership.haggle(salesperson1, customer1);
+        assertEquals(500, salesperson1.getCommission(), 0.01);
     }
 }
