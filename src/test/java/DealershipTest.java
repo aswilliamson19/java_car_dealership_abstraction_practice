@@ -20,9 +20,9 @@ public class DealershipTest {
         dealership = new Dealership("Cars and Stuff", 10000);
         car = new Car("Toyota", "Yaris", "1998", 2000);
         dealership.addVehicle(car);
-        salesperson1 = new Salesperson("Allan", 500, false, 4);
-        salesperson2 = new Salesperson("Susan", 200, false, 1);
-        salesperson3 = new Salesperson("Adam", 1000, true, 9);
+        salesperson1 = new Salesperson("Allan", 500, 4);
+        salesperson2 = new Salesperson("Susan", 200, 1);
+        salesperson3 = new Salesperson("Adam", 1000,9);
     }
 
     @Test

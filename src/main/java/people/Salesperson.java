@@ -10,10 +10,10 @@ public class Salesperson extends Person implements ISell {
     private boolean employeeOfTheMonth;
     private int trophies;
 
-    public Salesperson(String name, double commission, boolean employeeOfTheMonth, int trophies) {
+    public Salesperson(String name, double commission, int trophies) {
         super(name);
         this.commission = commission;
-        this.employeeOfTheMonth = employeeOfTheMonth;
+        this.employeeOfTheMonth = false;
         this.trophies = trophies;
     }
 

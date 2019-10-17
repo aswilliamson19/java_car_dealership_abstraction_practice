@@ -28,4 +28,16 @@ public class Manager extends Person {
     public int countTeam() {
         return this.team.size();
     }
+
+    public Salesperson getEmployeeOfTheMonth() {
+        int trophyCount = 0;
+        Salesperson employeeOfTheMonth = null;
+        for(Salesperson salesperson : this.team){
+            if(salesperson.getTrophies() > trophyCount){
+                trophyCount = salesperson.getTrophies();
+                employeeOfTheMonth = salesperson;
+            }
+        }
+        return employeeOfTheMonth;
+    }
 }

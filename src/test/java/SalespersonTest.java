@@ -19,8 +19,8 @@ public class SalespersonTest {
 
     @Before
     public void before() {
-        salesperson = new Salesperson("Susan", 200, false, 1);
-        salesperson1 = new Salesperson("Allan", 1500, false, 4);
+        salesperson = new Salesperson("Susan", 200, 10);
+        salesperson1 = new Salesperson("Allan", 1500, 4);
 
         car = new Car("Toyota", "Yaris", "1998", 2000);
         car2 = new Car("Toyota", "Aygo", "1998", 2000);
@@ -49,7 +49,7 @@ public class SalespersonTest {
 
     @Test
     public void hasTrophies(){
-        assertEquals(1, salesperson.getTrophies());
+        assertEquals(10, salesperson.getTrophies());
     }
 
     @Test
@@ -68,7 +68,6 @@ public class SalespersonTest {
         assertEquals(5, salesperson1.getTrophies());
         assertEquals(500, salesperson1.getCommission(), 0.01);
     }
-
 
 
 }
