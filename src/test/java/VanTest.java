@@ -33,8 +33,4 @@ public class VanTest {
         assertEquals(2000, van.getPrice());
     }
 
-    @Test
-    public void hasAvailability() {
-        assertEquals(true, van.isAvailable());
-    }
 }

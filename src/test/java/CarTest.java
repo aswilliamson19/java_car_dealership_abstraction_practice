@@ -33,10 +33,5 @@ public class CarTest {
         assertEquals(2000, car.getPrice());
     }
 
-    @Test
-    public void hasAvailability() {
-        assertEquals(true, car.isAvailable());
-    }
-
 
 }

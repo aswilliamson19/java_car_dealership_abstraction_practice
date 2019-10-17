@@ -6,14 +6,12 @@ public abstract class Vehicle {
     private String model;
     private String year;
     private int price;
-    private boolean available;
 
     public Vehicle(String make, String model, String year, int price) {
         this.make = make;
         this.model = model;
         this.year = year;
         this.price = price;
-        this.available = true;
     }
 
     public String getMake() {
@@ -32,11 +30,4 @@ public abstract class Vehicle {
         return price;
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void sold() {
-        this.available = false;
-    }
 }

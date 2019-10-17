@@ -1,4 +1,5 @@
 import Vehicle.Car;
+import dealership.Dealership;
 import org.junit.Before;
 import org.junit.Test;
 import people.Salesperson;
@@ -21,9 +22,7 @@ public class DealershipTest {
         dealership.addVehicle(car);
         salesperson1 = new Salesperson("Allan", 500, false, 4);
         salesperson2 = new Salesperson("Susan", 200, false, 1);
-        salesperson2 = new Salesperson("Susan", 200, false, 1);
         salesperson3 = new Salesperson("Adam", 1000, true, 9);
-
     }
 
     @Test

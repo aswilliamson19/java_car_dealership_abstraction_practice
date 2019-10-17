@@ -1,4 +1,7 @@
+package dealership;
+
 import Vehicle.Vehicle;
+import people.Customer;
 import people.Salesperson;
 
 import java.util.ArrayList;
@@ -39,5 +42,13 @@ public class Dealership {
 
     public int countSalesTeam(){
         return this.salesTeam.size();
+    }
+
+    public void removeVehicle(Vehicle vehicle){
+        this.availableVehicles.remove(vehicle);
+    }
+
+    public void addToBalance(Vehicle vehicle) {
+        this.balance += vehicle.getPrice();
     }
 }

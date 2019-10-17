@@ -1,6 +1,8 @@
 import Vehicle.Car;
+import dealership.Dealership;
 import org.junit.Before;
 import org.junit.Test;
+import people.Customer;
 import people.Salesperson;
 
 import static org.junit.Assert.assertEquals;
@@ -8,12 +10,26 @@ import static org.junit.Assert.assertEquals;
 public class SalespersonTest {
 
     Salesperson salesperson;
+    Salesperson salesperson1;
+
     Car car;
+    Car car2;
+    Customer customer;
+    Dealership dealership;
 
     @Before
     public void before() {
         salesperson = new Salesperson("Susan", 200, false, 1);
+        salesperson1 = new Salesperson("Allan", 1500, false, 4);
+
         car = new Car("Toyota", "Yaris", "1998", 2000);
+        car2 = new Car("Toyota", "Aygo", "1998", 2000);
+
+        customer = new Customer("Mike", 2000, 3000);
+
+        dealership = new Dealership("Cars and Stuff", 10000);
+        dealership.addVehicle(car);
+        dealership.addVehicle(car2);
     }
 
     @Test
@@ -32,17 +48,26 @@ public class SalespersonTest {
     }
 
     @Test
-    public void hastrophies(){
+    public void hasTrophies(){
         assertEquals(1, salesperson.getTrophies());
     }
 
     @Test
     public void canSell() {
-        salesperson.sell(car);
-        assertEquals(1, salesperson.countVehiclesSold());
-        assertEquals(false, car.isAvailable());
+        salesperson.sell(car, dealership, customer);
+        assertEquals(1, dealership.countVehicles());
+        assertEquals(12000, dealership.getBalance(), 0.01);
+        assertEquals(400, salesperson.getCommission(), 0.01);
+        assertEquals(1000, customer.getWallet(), 0.01);
+        assertEquals(1, customer.getBoughtVehicles());
     }
 
+    @Test
+    public void canGetATrophy() {
+        salesperson1.awardTrophy();
+        assertEquals(5, salesperson1.getTrophies());
+        assertEquals(500, salesperson1.getCommission(), 0.01);
+    }
 
 
 

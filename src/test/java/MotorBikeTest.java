@@ -33,8 +33,6 @@ public class MotorBikeTest {
         assertEquals(9000, motorbike.getPrice());
     }
 
-    @Test
-    public void hasAvailability() {
-        assertEquals(false, motorbike.isAvailable());
-    }
+
+
 }
