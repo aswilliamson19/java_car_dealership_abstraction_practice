@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Manager extends Person {
 
-    private ArrayList<StaffMember> team;
+    private ArrayList<Salesperson> team;
 
     public Manager(String name) {
         super(name);
-        this.team = new ArrayList<StaffMember>();
+        this.team = new ArrayList<Salesperson>();
     }
 
 
-    public StaffMember getTeamMember(String name) {
-        for (StaffMember staffMember : this.team) {
+    public Salesperson getTeamMember(String name) {
+        for (Salesperson staffMember : this.team) {
             if (staffMember.getName() == name) {
                 return staffMember;
             }
@@ -21,7 +21,7 @@ public class Manager extends Person {
         return null;
     }
 
-    public void addStaffMember(StaffMember staffMember) {
+    public void addStaffMember(Salesperson staffMember) {
         this.team.add(staffMember);
     }
 

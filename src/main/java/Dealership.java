@@ -1,10 +1,12 @@
 import Vehicle.Vehicle;
+import people.Salesperson;
 
 import java.util.ArrayList;
 
 public class Dealership {
 
     private ArrayList<Vehicle> availableVehicles;
+    private ArrayList<Salesperson> salesTeam;
     private double balance;
     private String name;
 
@@ -12,6 +14,7 @@ public class Dealership {
         this.name = name;
         this.balance = balance;
         this.availableVehicles = new ArrayList<Vehicle>();
+        this.salesTeam = new ArrayList<Salesperson>();
     }
 
     public String getName() {
@@ -30,9 +33,11 @@ public class Dealership {
         return this.balance;
     }
 
+    public ArrayList<Salesperson> getSalesTeam() {
+        return this.salesTeam;
+    }
 
-
-
-
-
+    public int countSalesTeam(){
+        return this.salesTeam.size();
+    }
 }

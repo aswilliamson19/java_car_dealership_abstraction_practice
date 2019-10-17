@@ -1,20 +1,20 @@
 import org.junit.Before;
 import org.junit.Test;
 import people.Manager;
-import people.StaffMember;
+import people.Salesperson;
 
 import static org.junit.Assert.assertEquals;
 
 public class ManagerTest {
 
     Manager manager;
-    StaffMember staffMember;
+    Salesperson salesperson;
 
     @Before
     public void before() {
         manager = new Manager("Bob");
-        staffMember = new StaffMember("Simon");
-        manager.addStaffMember(staffMember);
+        salesperson = new Salesperson("Simon", 600, false, 6);
+        manager.addStaffMember(salesperson);
     }
 
     @Test
@@ -29,6 +29,6 @@ public class ManagerTest {
 
     @Test
     public void isInStaffMemberList() {
-        assertEquals(staffMember, manager.getTeamMember("Simon"));
+        assertEquals(salesperson, manager.getTeamMember("Simon"));
     }
 }
