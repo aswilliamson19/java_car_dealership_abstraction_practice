@@ -23,6 +23,9 @@ public class DealershipTest {
         salesperson1 = new Salesperson("Allan", 500, 4);
         salesperson2 = new Salesperson("Susan", 200, 1);
         salesperson3 = new Salesperson("Adam", 1000,9);
+        dealership.addStaff(salesperson1);
+        dealership.addStaff(salesperson2);
+        dealership.addStaff(salesperson3);
     }
 
     @Test

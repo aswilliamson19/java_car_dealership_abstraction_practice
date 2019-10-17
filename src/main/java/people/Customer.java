@@ -1,6 +1,8 @@
 package people;
 
 import Vehicle.Vehicle;
+import dealership.Dealership;
+
 import java.util.ArrayList;
 
 public class Customer extends Person {
@@ -34,6 +36,12 @@ public class Customer extends Person {
 
     public void payForVehicle(Vehicle vehicle) {
         this.wallet -= vehicle.getPrice();
+    }
+
+    public void buy(Vehicle vehicle, Salesperson salesperson, Dealership dealership){
+        gainVehicle(vehicle);
+        payForVehicle(vehicle);
+        salesperson.sell(vehicle, dealership);
     }
 
 }

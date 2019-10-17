@@ -27,7 +27,7 @@ public class ManagerTest {
 
     @Test
     public void addStaffMemberToTeam() {
-        assertEquals(1, manager.countTeam());
+        assertEquals(2, manager.countTeam());
     }
 
     @Test

@@ -54,12 +54,10 @@ public class SalespersonTest {
 
     @Test
     public void canSell() {
-        salesperson.sell(car, dealership, customer);
+        salesperson.sell(car, dealership);
         assertEquals(1, dealership.countVehicles());
         assertEquals(12000, dealership.getBalance(), 0.01);
         assertEquals(400, salesperson.getCommission(), 0.01);
-        assertEquals(1000, customer.getWallet(), 0.01);
-        assertEquals(1, customer.getBoughtVehicles());
     }
 
     @Test

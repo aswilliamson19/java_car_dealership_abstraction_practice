@@ -17,11 +17,9 @@ public class Salesperson extends Person implements ISell {
         this.trophies = trophies;
     }
 
-    public String sell(Vehicle vehicle, Dealership dealership, Customer customer) {
+    public String sell(Vehicle vehicle, Dealership dealership) {
         dealership.removeVehicle(vehicle);
         dealership.addToBalance(vehicle);
-        customer.gainVehicle(vehicle);
-        customer.payForVehicle(vehicle);
         saleCommission(vehicle);
         return "I have sold a: " + vehicle.getMake();
     }
